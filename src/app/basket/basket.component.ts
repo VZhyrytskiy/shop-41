@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BasketService } from '../basket.service';
-import { ProductModel } from '../product-model';
-import { ProductsService } from '../products.service';
+import { BasketService } from './services/basket.service';
+import { ProductModel } from '../products/models/product-model';
+import { ProductsService } from '../products/services/products.service';
 
 @Component({
   selector: 'app-basket',
@@ -13,7 +13,7 @@ export class BasketComponent implements OnInit {
   public productsInBasket: ProductModel[];
 
   constructor(private readonly basketService: BasketService) {
-    this.productsInBasket = basketService.productsInBasket;
+    this.productsInBasket = this.basketService.productsInBasket;
   }
 
   ngOnInit(): void {

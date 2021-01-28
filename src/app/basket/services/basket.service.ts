@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProductModel } from './product-model';
+import { ProductModel } from '../../products/models/product-model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +9,12 @@ export class BasketService {
   public productsInBasket: ProductModel[];
 
   constructor() {
-    this.productsInBasket = []
+    this.productsInBasket = [];
   }
 
   public addToBasket(item: ProductModel): void {
     item.amount = 1;
-    var existingItem = this.productsInBasket.find(i => i.id == item.id);
+    const existingItem = this.productsInBasket.find(i => i.id === item.id);
 
     if (existingItem != null) {
       this.productsInBasket[this.productsInBasket.indexOf(existingItem)].amount++;

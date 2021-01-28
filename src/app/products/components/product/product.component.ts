@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProductModel } from '../product-model';
-import { ProductsService } from '../products.service';
+import { ProductModel } from '../../models/product-model';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-product',
@@ -11,6 +11,8 @@ export class ProductComponent implements OnInit {
   @Input()
   public product: ProductModel;
 
+  // тут не должно быть зависимости, так как это презентационный компонент для отображения данных
+  // он не меняет данные, он должен извещать родителя через аутпут
   constructor(private readonly productService: ProductsService) {  }
 
   ngOnInit(): void {  }

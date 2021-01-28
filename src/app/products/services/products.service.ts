@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BasketService } from './basket.service';
-import { Category } from './category';
-import { ProductModel } from './product-model';
+import { BasketService } from '../../basket/services/basket.service';
+import { Category } from '../models/category.enum';
+import { ProductModel } from '../models/product-model';
 
 @Injectable({
   providedIn: 'root'
@@ -129,7 +129,7 @@ export class ProductsService {
   }
 
   public decreaseProductAmount(id: number): void {
-    var product = this.getProduct(id);
+    const product = this.getProduct(id);
 
     if (product.amount > 0) {
       product.amount--;

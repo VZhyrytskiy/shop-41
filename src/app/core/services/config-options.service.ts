@@ -12,6 +12,8 @@ export class ConfigOptionsService {
     this.userModel = new UserModel();
    }
 
+  // тут задача стояла так, чтобы не все данные сохранять, а например какое-то подмножество данных
+  // предполагал использование спред оператора и утилиты Partial
   setUser(
     id: number,
     login: string,
